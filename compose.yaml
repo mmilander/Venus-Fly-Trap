@@ -1,0 +1,12 @@
+# this file tells Docker which software to run and how to configure it
+
+services: # which applications to run
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:2.0.0 # the software to download
+    ports: # tells Docker how the browser can communicate with n8n inside the container
+      - "127.0.0.1:5678:5678" # Allows: http://localhost:5678 def: computer port# : n8n port#
+    volumes: # tells Docker where to save n8n's data
+      - n8n_data:/home/node/.n8n
+  
+volumes: # declares the storage
+  n8n_data:
