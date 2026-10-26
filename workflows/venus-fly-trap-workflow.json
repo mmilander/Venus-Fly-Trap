@@ -7,7 +7,7 @@
       "typeVersion": 1,
       "position": [
         0,
-        0
+        -96
       ],
       "id": "08257660-e78b-4b72-b50c-4ef8e5aaa819",
       "name": "When clicking ‘Execute workflow’"
@@ -25,6 +25,23 @@
       ],
       "id": "d5654dc1-e0ca-45d3-905d-b7ed8cfb03c7",
       "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "venus-fly-trap",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        80
+      ],
+      "id": "4056536c-9a3d-42e8-946d-bd357851535c",
+      "name": "Webhook",
+      "webhookId": "5418b0b3-715f-4d4b-9def-4739b769af5b"
     },
     {
       "parameters": {
@@ -91,13 +108,24 @@
           }
         ]
       ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "75062c77-18e8-4f0f-b82d-8d9306f1cbd1",
+  "versionId": "07f146e1-9bc6-44a4-baea-57abf9d4a042",
   "meta": {
     "instanceId": "0980db9a5fa839b8d6f8f7a796f36b6bf54242859356aca00dcaab36db36fc72"
   },
