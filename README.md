@@ -50,4 +50,4 @@ problem lives.
 ## Additional Documentation
 * [D1 Assignment](https://github.com/mmilander/Venus-Fly-Trap/blob/main/Documents/D1-Team%2C%20Track%2C%20Target%2C%20and%20Scope.pdf)
 ## License
-[MIT](https://github.com/mmilander/Venus-Fly-Trap/blob/main/LICENSE.txt)
+* [MIT](https://github.com/mmilander/Venus-Fly-Trap/blob/main/LICENSE.txt)
