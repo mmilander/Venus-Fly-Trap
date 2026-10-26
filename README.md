@@ -52,4 +52,4 @@ TODO: Provide links to additional documentation that may exist in the repo, e.g.
 * Sprint reports
 * User links
 ## License
-- [Link](https://github.com/mmilander/Venus-Fly-Trap/blob/main/LICENSE.txt)
+[MIT](https://github.com/mmilander/Venus-Fly-Trap/blob/main/LICENSE.txt)
