@@ -1,0 +1,106 @@
+{
+  "name": "Venus-Fly-Trap_D2 Harness",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "08257660-e78b-4b72-b50c-4ef8e5aaa819",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "http://host.docker.internal:8000",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "d5654dc1-e0ca-45d3-905d-b7ed8cfb03c7",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "48780340-4938-4b36-8b6a-756166276100",
+              "name": "test_id",
+              "value": "test_001",
+              "type": "string"
+            },
+            {
+              "id": "71cae68f-ec9e-4551-b089-65110e1667db",
+              "name": "page_content",
+              "value": "={{ $json.data }}",
+              "type": "string"
+            },
+            {
+              "id": "58ff12e7-f8aa-4b0a-a9e1-1596ef5890c2",
+              "name": "success",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "id": "1a08e2db-6814-4909-82ba-9ede4144630f",
+              "name": "status",
+              "value": "not_tested",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "e79fc5b3-563f-49b7-9dd3-1256a35856e9",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "75062c77-18e8-4f0f-b82d-8d9306f1cbd1",
+  "meta": {
+    "instanceId": "0980db9a5fa839b8d6f8f7a796f36b6bf54242859356aca00dcaab36db36fc72"
+  },
+  "id": "Eh1iAW6g7ELDCTi1",
+  "tags": []
+}
