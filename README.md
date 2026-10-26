@@ -38,7 +38,6 @@ TODO: Write a compelling/creative/informative project description / summary
     ```
     docker compose down
     ```
-
 ## Functionality
 TODO: Write usage instructions. Structuring it as a walkthrough can help structure
 this section,
@@ -53,4 +52,4 @@ TODO: Provide links to additional documentation that may exist in the repo, e.g.
 * Sprint reports
 * User links
 ## License
-MIT license
+- [Link](https://github.com/mmilander/Venus-Fly-Trap/blob/main/LICENSE.txt)
