@@ -1,0 +1,147 @@
+{
+  "name": "Venus-Fly-Trap_D2 Harness",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        448,
+        16
+      ],
+      "id": "2aaea030-28b3-438d-8f2d-abcc8b5a52ce",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        464,
+        224
+      ],
+      "id": "f542f077-a551-4f1c-8f57-5e8dbd045bd2",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        224
+      ],
+      "id": "1f9bc02b-caa0-4d0d-8f43-5d292d2a6312",
+      "name": "Send a message in Gmail",
+      "webhookId": "383b0f1f-f7fc-4811-86ad-ec11145b3766",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "9bZk7ooVziiUJHCW",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        96,
+        16
+      ],
+      "id": "ffc3d01c-3fea-4a65-8632-3f084ba53519",
+      "name": "When chat message received",
+      "webhookId": "4d46664d-807e-44c5-8994-1307a9e2f8bb"
+    },
+    {
+      "parameters": {
+        "model": "nvidia/nemotron-3.5-lightning:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        304,
+        224
+      ],
+      "id": "626690ea-246d-4642-8998-a974bd21bbb5",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "3XMPiQNo4fGXlTB7",
+          "name": "OpenRouter account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "HTTP Request": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "150d1ec0-8535-4346-9634-195a45dbc24f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "10620c0106444fc1cac182cd1d9e60fbfeafef8e159ea220a49a96565a7a329f"
+  },
+  "id": "5AiaGT2tQCasW9fV",
+  "tags": []
+}
