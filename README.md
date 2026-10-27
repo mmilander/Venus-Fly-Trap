@@ -68,8 +68,6 @@ In the results CSV, `success` is either `True` or `False`, where `True` means th
 - `results.csv` is overwritten after each run of the harness, making it difficult to track results history across multiple trials
 - Currently no error handling in run_harness.py, causing an error if n8n is down or if it returns malformed JSON.
 
-At this moment, all that's set up is the agentic harness. As such, there are no models or emails in the workflow, and the webpage does not yet contain a poisoned payload, so all the harness currently returns upon testing is a hardcoded result.
-
 ## Additional Documentation
 
 - [D1 Assignment](https://github.com/mmilander/Venus-Fly-Trap/blob/main/Documents/D1-Team%2C%20Track%2C%20Target%2C%20and%20Scope.pdf)
