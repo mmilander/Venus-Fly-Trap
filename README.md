@@ -8,7 +8,7 @@ Venus Fly Trap is a local n8n harness that tries to test whether or not an n8n A
 
 ### Additional information about the project
 
-The only thing that the theoretical attacker would own would be a webpage, and the attack itself is untargeted. Any potential AI agent visitors to the webpage would be the attacker's route to a victim. The goal is to divulge personal information from a potential victim by having the AI agent send an email to a specified address containing a predetermined flag that acts as a stand in for real personal information. The models that we chose to focus on for this test are ChatGPT 5.6 Luna and Ollama v0.34.0. This webpage is only locally hosted and never exposed to the wider internet, so no real AI agents can be affected.
+The only thing that the theoretical attacker would own would be a webpage, and the attack itself is untargeted. Any potential AI agent visitors to the webpage would be the attacker's route to a victim. The goal is to divulge personal information from a potential victim by having the AI agent send an email to a specified address containing a predetermined flag that acts as a stand in for real personal information. The models that we chose to focus on for this test are NIVIDA Nemotron 3.5 Lightning through OpenRouter's free endpoint and OpenAI GPT-4o mini.
 
 ## Installation
 
